@@ -15,6 +15,14 @@ def fizz_buzz(number):
     >>> fizz_buzz(15)
     'FizzBuzz'
     """
+    if number % 3 == 0 and number % 5 == 0:
+        print ("'FizzBuzz'")
+    elif number % 3 == 0:
+        print ("'Fizz'")
+    elif number % 5 == 0:
+        print ("'Buzz'")
+    else :
+        print (number)
     return
 
 
@@ -30,6 +38,12 @@ def sum_of_squares(numbers):
     >>> sum_of_squares([2, 4, 6])
     56
     """
+    sumofsquares=0
+    for x in numbers:
+        squares = x*x
+        sumofsquares += squares
+    print (sumofsquares)
+
     return
 
 
@@ -45,6 +59,13 @@ def count_vowels(string):
     >>> count_vowels("aeiou")
     5
     """
+    vowels = "aeiouAEIOU"
+    counts = 0
+    for char in string:
+        if char in vowels:
+            counts = counts + 1
+    print(counts)
+
     return
 
 
@@ -60,6 +81,16 @@ def count_repeats(string):
     >>> count_repeats("aeiou")
     0
     """
+    tot_repeat=0
+    cnt=0
+    for x in string:
+        cnt = string.count(x)
+        if cnt>1 :
+            mytable = str.maketrans(' ',' ',x)
+            string=string.translate(mytable)
+            tot_repeat=tot_repeat+cnt
+    print(tot_repeat)
+
     return
 
 
